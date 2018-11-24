@@ -19,7 +19,12 @@
 <ol>
   {{#each burgers}}
     {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
+      <li>
+          {{burger_name}}
+          <button class="change-devour" data-id="{{id}}" data-devoured="{{devoured}}">
+            Devour it!
+          </button>
+      </li>
     {{/unless}}
   {{/each}}
 </ol>
@@ -32,8 +37,9 @@
 <ol>
   {{#each burgers}}
     {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-      
+           <li>
+          {{burger_name}}
+           </li>
     {{/if}}
   {{/each}}
 </ol>
